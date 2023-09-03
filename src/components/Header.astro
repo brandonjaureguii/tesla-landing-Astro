@@ -1,0 +1,136 @@
+---
+import Logo from './Logo.astro'
+import Navbar from './Navbar.astro'
+---
+
+<header 
+id="landing-header"
+class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white ">
+
+
+    <div class="flex flex-grow basis-0 mt-1">
+        <Logo/>
+    </div>
+
+
+    <nav id="nav-bar">
+        <ul class="flex [&>li>a]:inline-block [&>li>a]:transition-colors [&>li>a]:duration-300 [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a]:text-current">
+            <li><a href="#">Vehicles</a></li>
+            <li><a href="#">Energy</a></li>
+            <li><a href="#">Charging</a></li>
+            <li><a href="#">Discover</a></li>
+        </ul>
+
+    </nav>
+    <nav class="flex flex-grow basis-0 justify-end"
+    id="nav-bar">
+        <ul class="flex [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a]:text-current [&>li>a]:transition-colors [&>li>a]:duration-300">
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Menu</a></li>
+        </ul>
+    </nav>  
+    
+    
+    <div 
+    id="menu-backdrop"
+    class="absolute bg-black/5 backdrop-blur-lg rounded 
+    translate-x-[var(--left)] translate-y-[var(--top)] 
+    left-0 top-0 w-[var(--width)] h-[var(--height)] 
+    transition-all duration-300 ease-in-out
+    opacity-0 -z-10"
+    ></div>
+
+
+    <div class="backdrop-blur-xl p-1 px-3 bg-black/5 cursor-pointer -mr-4 hidden"
+    id="btn-menu">
+        Menu
+    </div>
+
+</header>
+
+<Navbar></Navbar>
+
+<script>
+
+    // slider nav animation 
+    const ListItem = document.querySelectorAll("#landing-header li")
+    const MenuBackdrop = document.querySelector("#menu-backdrop") as HTMLElement
+
+    ListItem.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+            const { left, top, width, height } = item.getBoundingClientRect()
+            const { clientHeight, clientWidth } = item 
+            MenuBackdrop.style.setProperty("--left", `${left}px`)
+            MenuBackdrop.style.setProperty("--top", `${top}px`)
+            MenuBackdrop.style.setProperty("--width", `${width}px`)
+            MenuBackdrop.style.setProperty("--height", `${height}px`)
+            MenuBackdrop.style.opacity = "1"
+            MenuBackdrop.style.visibility = "visible"
+
+            item.addEventListener("mouseleave", ()=> {
+            MenuBackdrop.style.opacity = "0"
+            MenuBackdrop.style.visibility = "hidden"
+            })
+        })
+    })
+
+
+
+    // animation scroll pages
+    const $header = document.getElementById('landing-header')
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px', // en cuanto se vea el elemento
+        threshold: 0.90 // porcentaje de visibilidad
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const { isIntersecting } = entry
+            if (isIntersecting) {
+                const color = entry.target.getAttribute('data-header-color')
+                $header.style.color = color
+            }
+        })
+    }, observerOptions)
+
+    const $sections = document.querySelectorAll('.landing-section')
+    $sections.forEach(section => observer.observe(section))
+
+
+
+
+    // btn open modal
+    const btnMenu = document.getElementById("btn-menu")
+    const modal = document.getElementById("modal") 
+
+    console.log(modal)
+
+    btnMenu.addEventListener("click", ()=>{
+        modal.classList.add("open")
+    })
+    
+
+</script>
+
+
+
+<!-- responsive -->
+<style>
+@media (max-width: 1260px) {
+	#nav-bar {
+		display: none;
+	}
+    #btn-menu {
+       display: inline;
+    }
+}
+@media (max-width: 620px) {
+	#landing-header {
+        padding-left: 20px;
+        padding-left: 20px;
+    }
+}
+
+</style>

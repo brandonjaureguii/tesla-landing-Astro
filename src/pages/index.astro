@@ -1,0 +1,273 @@
+---
+import Header from '../components/Header.astro'
+import Section from '../components/Section.astro'
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Electric Cars, Solar &amp; Clean Energy | Tesla">
+
+<Header/>
+
+<main class="snap-y snap-mandatory relative w-full h-screen overflow-auto scroll overflow-x-hidden">	
+		<div class="snap-center">
+			<Section title="Experience Tesla" color="white">
+
+				<p slot="subtitle" class={`text-white text-sm`}>Schedule a Demo Drive Today</p>
+			
+				<div slot="footer">
+					<a class={"border-2 rounded text-sm text-white px-14 py-2"} href="#">Demo Drive</a>
+				</div>
+			
+				<video 
+				slot="background"
+				class="object-center object-cover h-full w-full"
+				autoplay 
+				muted 
+				loop 
+				src="../public/video-desktop.webm">
+				</video>
+				
+				
+			</Section>
+		</div>
+		<div class="snap-center">
+			<Section title="Model 3" color="black">
+				<p slot="subtitle" class="text-black text-sm">
+					Starting at $32,740
+					<br>
+					After Federal Tax Credit
+				</p>
+			
+				<div slot="footer" class="flex mx-auto gap-x-5" id="footer-flex">
+					<a class="bg-white rounded text-sm text-black px-14 py-2" href="#">Explore Inventory</a>
+					<a class="bg-gray-600 rounded text-sm text-white px-14 py-2" href="#">Custom Order</a>
+				</div>
+			
+				<img 
+				id="slot-bg-m3"
+				slot="background"
+				src="../public/model-3.avif" 
+				alt="" 
+				class="object-center object-cover w-full h-full">
+			</Section>
+		</div>
+		<div class="snap-center">
+			<Section title="Model Y" color="black">
+
+				<p slot="subtitle" class="text-black text-sm">
+					Starting at $40,240
+					<br>
+					After Federal Tax Credit
+				</p>
+			
+				<div slot="footer" class="flex mx-auto gap-x-5" id="footer-flex">
+					<a class="bg-white rounded text-sm text-black px-14 py-2" href="#">Explore Inventory</a>
+					<a class="bg-gray-600 rounded text-sm text-white px-14 py-2" href="#">Custom Order</a>
+				</div>
+			
+				<img 
+				id="slot-bg-my"
+				slot="background"
+				src="../public/model-y.avif" 
+				alt="" 
+				class="object-center object-cover w-full h-full">
+			
+			</Section>
+		</div>
+		<div class="snap-center">
+			<Section title="Model S" color="black">
+
+				<p slot="subtitle" class="text-sm underline text-slate-700">
+					Explore Inventory
+				</p>
+			
+				<div slot="footer" class="flex mx-auto gap-x-5" id="footer-flex">
+					<a class="bg-white rounded text-sm text-black px-14 py-2" href="#">Explore Inventory</a>
+					<a class="bg-gray-600 rounded text-sm text-white px-14 py-2" href="#">Custom Order</a>
+				</div>
+			
+				<img 
+				id="slot-bg-ms"
+				slot="background"
+				src="../public/model-s.avif" 
+				alt="" 
+				class="object-center object-cover w-full h-full">
+			
+			</Section>
+		</div>
+		<div class="snap-center">
+			<Section title="Model X" color="black">
+
+				<p slot="subtitle" class="text-sm underline text-slate-700">
+					Explore Inventory
+				</p>
+			
+				<div slot="footer" class="flex mx-auto gap-x-5" id="footer-flex">
+					<a class="bg-white rounded text-sm text-black px-14 py-2" href="#">Explore Inventory</a>
+					<a class="bg-gray-600 rounded text-sm text-white px-14 py-2" href="#">Custom Order</a>
+				</div>
+			
+				<img 
+				id="slot-bg-mx"
+				slot="background"
+				src="../public/model-x.avif" 
+				alt="" 
+				class="object-center object-cover w-full h-full">
+			
+			</Section>
+		</div>
+		<div class="snap-center">
+			<Section title="Solar Panels" color="black">
+
+				<p slot="subtitle" class="text-sm underline text-slate-700">
+					Schedule a Virtual Consultation
+				</p>
+			
+				<div slot="footer" class="flex mx-auto gap-x-5" id="footer-flex">
+					<a class="bg-white rounded text-sm text-black px-14 py-2" href="#">Order Now</a>
+					<a class="bg-gray-600 rounded text-sm text-white px-14 py-2" href="#">Learn More</a>
+				</div>
+			
+				<img 
+				id="slot-bg-sp"
+				slot="background"
+				src="../public/solar-panels.avif" 
+				alt="" 
+				class="object-center object-cover w-full h-full">
+			
+			</Section>
+		</div>
+		<div class="snap-center">
+			<Section title="Solar Roof" color="black">
+
+				<p slot="subtitle" class="text-sm text-slate-700">
+					Produce Clean Energy From Your Roof
+				</p>
+			
+				<div slot="footer" class="flex mx-auto gap-x-5 " id="footer-flex">
+					<a class="bg-white rounded text-sm text-black px-14 py-2" href="#">Order Now</a>
+					<a class="bg-gray-600 rounded text-sm text-white px-14 py-2" href="#">Learn More</a>
+				</div>
+			
+				<img 
+				id="slot-bg-sr"
+				slot="background"
+				src="../public/solar-roof.avif" 
+				alt="" 
+				class="object-center object-cover w-full h-full">
+			
+			</Section>
+		</div>
+		<div class="snap-center">
+			<Section title="Powerwall" color="black">
+			
+				<div slot="footer" class="flex mx-auto gap-x-5" id="footer-flex">
+					<a class="bg-white rounded text-sm text-black px-14 py-2" href="#">Order Now</a>
+					<a class="bg-gray-600 rounded text-sm text-white px-14 py-2" href="#">Learn More</a>
+				</div>
+
+				<div slot="footer-end" id="footer-container">
+					<ul class="text-slate-300 text-xs flex justify-center flex-wrap">
+						<li class="p-3 py-7"><a href="#">Tesla © 2023</a></li>
+						<li class="p-3 py-7"><a href="#">Privacy & Legal</a></li>
+						<li class="p-3 py-7"><a href="#">Vehicle Recalls</a></li>
+						<li class="p-3 py-7"><a href="#">Contact</a></li>
+						<li class="p-3 py-7"><a href="#">News</a></li>
+						<li class="p-3 py-7"><a href="#">Get Updates</a></li>
+						<li class="p-3 py-7"><a href="#">Locations</a></li>
+					</ul>
+				</div>
+			
+				<img 
+				id="slot-bg-pw"
+				slot="background"
+				src="../public/powerwall.avif" 
+				alt="" 
+				class="object-center object-cover w-full h-full">			
+			</Section>
+			
+		</div>
+		
+</main>
+
+<script>
+
+// Responsive design , media query images background 
+const bgModel3 = document.getElementById('slot-bg-m3')
+const bgModely = document.getElementById('slot-bg-my')
+const bgModels = document.getElementById('slot-bg-ms')
+const bgModelx = document.getElementById('slot-bg-mx')
+const bgSolarpanels = document.getElementById('slot-bg-sp')
+const bgSolarroof = document.getElementById('slot-bg-sr')
+const bgPowerwall = document.getElementById('slot-bg-pw')
+
+const mediaQr = window.matchMedia(`(max-width: 620px)`)
+const changeSize = (media) => {
+	if (media.matches) {
+		bgModel3.setAttribute("src", "../public/model-3-mobile.avif")
+		bgModely.setAttribute("src", "../public/model-y-mobile.avif")
+		bgModels.setAttribute("src", "../public/model-s-mobile.avif")
+		bgModelx.setAttribute("src", "../public/model-x-mobile.avif")
+		bgSolarpanels.setAttribute("src", "../public/solar-panels-mobile.avif")
+		bgSolarroof.setAttribute("src", "../public/solar-roof-mobile.avif")
+		bgPowerwall.setAttribute("src", "../public/powerwall-mobile.avif")
+	}
+	else {
+		bgModel3.setAttribute("src", "../public/model-3.avif")
+		bgModely.setAttribute("src", "../public/model-y.avif")
+		bgModels.setAttribute("src", "../public/model-s.avif")
+		bgModelx.setAttribute("src", "../public/model-x.avif")
+		bgSolarpanels.setAttribute("src", "../public/solar-panels.avif")
+		bgSolarroof.setAttribute("src", "../public/solar-roof.avif")
+		bgPowerwall.setAttribute("src", "../public/powerwall.avif")
+	}
+}
+mediaQr.addListener(changeSize)
+changeSize(mediaQr)
+
+
+</script>
+
+</Layout>
+
+
+<!-- Responsive design -->
+<style>
+	#footer-flex {
+		opacity: 0.7;
+	}
+	#footer-container {
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0,0,0,0));
+	}
+	
+	/* footer responsive */
+	@media (max-width: 900px) {
+		#footer-container {
+			background-color: black;
+		}
+	}
+	@media (max-width: 620px) {
+		
+		p {
+			font-size: 10px;
+		}
+		#footer-flex {
+			width: 85%;
+			flex-direction: column;
+			margin-bottom: -45px;
+		}
+		#footer-flex a {
+			margin-bottom: 15px;
+			
+		}
+		
+	}
+	@media (max-width: 680px) {
+		#footer-container ul {
+			font-size: 10px;
+		}
+		#footer-container ul li {
+			padding-top: 13px;
+			padding-bottom: 13px;
+		}
+	}
+</style>
