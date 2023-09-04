@@ -82,7 +82,7 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
     const observerOptions = {
         root: null,
         rootMargin: '0px', // en cuanto se vea el elemento
-        threshold: 0.90 // porcentaje de visibilidad
+        threshold: 0.65 // porcentaje de visibilidad
     }
 
     const observer = new IntersectionObserver(entries => {
@@ -104,9 +104,6 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
     // btn open modal
     const btnMenu = document.getElementById("btn-menu")
     const modal = document.getElementById("modal") 
-
-    console.log(modal)
-
     btnMenu.addEventListener("click", ()=>{
         modal.classList.add("open")
     })
