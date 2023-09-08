@@ -52,7 +52,7 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
 <Navbar></Navbar>
 
 <script>
-    
+
     const ListItem = document.querySelectorAll("#landing-header li")
     const MenuBackdrop = document.querySelector("#menu-backdrop") as HTMLElement
 
@@ -80,7 +80,7 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
     const observerOptions = {
         root: null,
         rootMargin: '0px', 
-        threshold: 0.45 
+        threshold: 0.15 
     }
 
     const observer = new IntersectionObserver(entries => {
