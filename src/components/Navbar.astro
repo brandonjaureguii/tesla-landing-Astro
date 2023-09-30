@@ -1,97 +1,493 @@
+
 <dialog class=" bg-white w-screen h-screen inset-y-0 inset-x-0 p-0 z-40 m-0"  id="modal">
 
-    <div class="w-full flex justify-end">
-        <button class="m-2 p-2">
-            <svg id="xmark" class="w-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-        </button>
+    <div id="modal-main">
+        <div class="w-full flex justify-end">
+            <button class="m-2 p-2" id="xmark">
+                <svg class="w-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+            </button>
+            
+          
+        </div>
+    
+        <div class="mt-4 flex">
+            <ul class="mx-auto w-11/12">
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4" id="btnVehiclesN">
+                        <span>Vehicles</span>
+                        <svg class="w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                          </svg>
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4" id="btnEnergyN">
+                        <span>Energy</span>
+                        <svg class="w-5 " fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                          </svg>
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4" id="btnChargingN">
+                        <span>Charging</span>
+                        <svg class="w-5 " fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                          </svg>
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                        <span>Discover</span>
+                        <svg class="w-5 " fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                          </svg>
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5">
+                        <span>Shop</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                        <span>Support</span>
+                    </button>
+                </li>
+                <li>
+                   
+                    <button class="w-full flex p-4 hover:bg-black/5 my-4">
+                        <span><svg class="w-7 my-auto mr-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"></path>
+                          </svg></span>
+                        <span class="text-left">United States<br><span class="text-zinc-500">English</span></span>
+                        <svg class="w-5 ml-auto my-auto" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                          </svg>
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex p-4 hover:bg-black/5 my-4">
+                        <span><svg class="w-7 mr-3 -mt-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                          </svg></span>
+                        <span>Account</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="modal-vehicles" class="hidden">
+        <div class="w-full flex justify-end">
+            <div class="w-full flex p-4">
+                <button class="p-1 ml-2" id="btnReverse">
+                    <svg class="w-5 rotate-180 " fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                      </svg>
+                </button>
+                
+                <h2 class="m-auto">Vehicles</h2>         
+            </div>
+            <button class="m-2 p-2" id="xmark">
+                <svg class="w-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+            </button>
+            
+          
+        </div>
+    
+        <div class="mt-4 flex">
+            <ul class="mx-auto w-11/12">
+                    <div class="grid gap-4 text-center align-center grid-cols-4" id="grid-container">
+                        <div class="text-center">
+                            <button id="button-container">
+                                <img src="../../public/model-3-item.avif" class="w-52" alt="">
+                                <div id="button-items">
+                                    <h2>Model 3</h2><br>
+                                    <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                        <a href="#">Learn</a>
+                                        <a href="#">Order</a>
+                                    </div>
+                                </div>
+                                
+                            </button>
+                        </div>
         
-      
+                        <div class="text-center">
+                            <button id="button-container">
+                                <img src="../../public/model-s-item.avif" class="w-52" alt="">
+                                <div id="button-items">
+                                    <h2>Model S</h2><br>
+                                    <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                        <a href="#">Learn</a>
+                                        <a href="#">Order</a>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+        
+                        <div class="text-center">
+                            <button id="button-container">
+                                <img src="../../public/model-x-item.avif" class="w-52" alt="">
+                                <div id="button-items">
+                                    <h2>Model X</h2><br>
+                                    <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                        <a href="#">Learn</a>
+                                        <a href="#">Order</a>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+        
+                        <div class="text-center">
+                            <button id="button-container">
+                                <img src="../../public/model-y-item.avif" class="w-52" alt="">
+                                <div id="button-items">
+                                    <h2>Model Y</h2><br>
+                                    <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                        <a href="#">Learn</a>
+                                        <a href="#">Order</a>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>    
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                        <span>Inventory</span>
+                        
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                        <span>Used Cars</span>
+                        
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                        <span>Demo Drive</span>
+                        
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5">
+                        <span>Trade In</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                        <span>Help Me Chose</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                        <span>Compare</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                        <span>Flest</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                        <span>Cybertruck</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                        <span>Semi</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                        <span>Roadster</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+            
+    </div>
+    
+
+    <div id="modal-energy" class="hidden">
+        <div class="w-full flex justify-end">
+            <div class="w-full flex p-4">
+                <button class="p-1 ml-2" id="btnReverse">
+                    <svg class="w-5 rotate-180 " fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                      </svg>
+                </button>
+                
+                <h2 class="m-auto">Energy</h2>         
+            </div>
+            <button class="m-2 p-2" id="xmark">
+                <svg class="w-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+            </button>
+            
+          
+        </div>
+    
+        <div class="mt-4 flex">
+            <ul class="mx-auto w-11/12">
+                    <div class="grid gap-4 text-center align-center grid-cols-4" id="grid-container">
+                        <div class="text-center">
+                            <button id="button-container">
+                                <img src="../../public/solar-panels-item.avif" class="w-52" alt="">
+                                <div id="button-items">
+                                    <h2>Solar Panels</h2><br>
+                                    <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                        <a href="#">Learn</a>
+                                        <a href="#">Order</a>
+                                    </div>
+                                </div>
+                                
+                            </button>
+                        </div>
+        
+                        <div class="text-center">
+                            <button id="button-container">
+                                <img src="../../public/solar-roof-item.avif" class="w-52" alt="">
+                                <div id="button-items">
+                                    <h2>Solar Roof</h2><br>
+                                    <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                        <a href="#">Learn</a>
+                                        <a href="#">Order</a>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+        
+                        <div class="text-center">
+                            <button id="button-container">
+                                <img src="../../public/powerwall-item.avif" class="w-52" alt="">
+                                <div id="button-items">
+                                    <h2>Powerwall</h2><br>
+                                    <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                        <a href="#">Learn</a>
+                                        <a href="#">Order</a>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+        
+                        <div class="text-center">
+                            <button id="button-container">
+                                <img src="../../public/megapack-item.avif" class="w-52" alt="">
+                                <div id="button-items">
+                                    <h2>Megapack</h2><br>
+                                    <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                        <a href="#">Learn</a>
+                                        <a href="#">Order</a>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>    
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                        <span>Schedule a Consultation</span>
+                        
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                        <span>Incentives</span>
+                        
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                        <span>Support</span>
+                        
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5">
+                        <span>Partner with Tesla</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                        <span>Commercial</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                        <span>Utilities</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
     </div>
 
-    <div class="mt-4 flex">
-        <ul class="mx-auto w-11/12">
-            <li>
-                <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
-                    <span>Vehicles</span>
-                    <svg class="w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+    <div id="modal-charging" class="hidden">
+        <div class="w-full flex justify-end">
+            <div class="w-full flex p-4">
+                <button class="p-1 ml-2" id="btnReverse">
+                    <svg class="w-5 rotate-180 " fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
                       </svg>
                 </button>
-            </li>
-            <li>
-                <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
-                    <span>Energy</span>
-                    <svg class="w-5 " fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
-                      </svg>
-                </button>
-            </li>
-            <li>
-                <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
-                    <span>Charging</span>
-                    <svg class="w-5 " fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
-                      </svg>
-                </button>
-            </li>
-            <li>
-                <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
-                    <span>Discover</span>
-                    <svg class="w-5 " fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
-                      </svg>
-                </button>
-            </li>
-            <li>
-                <button class="w-full flex justify-between p-4 hover:bg-black/5">
-                    <span>Shop</span>
-                </button>
-            </li>
-            <li>
-                <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
-                    <span>Support</span>
-                </button>
-            </li>
-            <li>
-               
-                <button class="w-full flex p-4 hover:bg-black/5 my-4">
-                    <span><svg class="w-7 my-auto mr-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"></path>
-                      </svg></span>
-                    <span class="text-left">United States<br><span class="text-zinc-500">English</span></span>
-                    <svg class="w-5 ml-auto my-auto" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
-                      </svg>
-                </button>
-            </li>
-            <li>
-                <button class="w-full flex p-4 hover:bg-black/5 my-4">
-                    <span><svg class="w-7 mr-3 -mt-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                      </svg></span>
-                    <span>Account</span>
-                </button>
-            </li>
-        </ul>
+                
+                <h2 class="m-auto">Energy</h2>         
+            </div>
+            <button class="m-2 p-2" id="xmark">
+                <svg class="w-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+            </button>
+            
+          
+        </div>
+    
+        <div class="mt-4 flex">
+            <ul class="mx-auto w-11/12">
+                    <div class="grid gap-4 text-center align-center grid-cols-4" id="grid-container">
+                        <div class="text-center">
+                            <button id="button-container">
+                                <img src="../../public/charging-item.avif" class="w-52" alt="">
+                                <div id="button-items">
+                                    <h2>Charging</h2><br>
+                                    <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                        <a href="#">Learn</a>
+                                        <a href="#">Order</a>
+                                    </div>
+                                </div>
+                                
+                            </button>
+                        </div>
+        
+                        <div class="text-center">
+                            <button id="button-container">
+                                <img src="../../public/charging2-item.avif" class="w-52" alt="">
+                                <div id="button-items">
+                                    <h2>Charging</h2><br>
+                                    <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                        <a href="#">Learn</a>
+                                        <a href="#">Order</a>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+        
+                        <div class="text-center">
+                            <button id="button-container">
+                                <img src="../../public/supercharging-item.avif" class="w-52" alt="">
+                                <div id="button-items">
+                                    <h2>Supercharging</h2><br>
+                                    <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                        <a href="#">Learn</a>
+                                        <a href="#">Order</a>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>    
+                    <li>
+                        <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                            <span>Charging Calculator</span>
+                            
+                        </button>
+                    </li>
+                    <li>
+                        <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                            <span>Trip Planner</span>
+                            
+                        </button>
+                    </li>
+                    <li>
+                        <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                            <span>Supercharger Voting</span>
+                            
+                        </button>
+                    </li>
+                    <li>
+                        <button class="w-full flex justify-between p-4 hover:bg-black/5">
+                            <span>Host a Supercharger</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                            <span>Commercial Charging</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="w-full flex justify-between p-4 hover:bg-black/5 my-4">
+                            <span>Host Wall Connectors</span>
+                        </button>
+                    </li>
+            </ul>
+        </div>
     </div>
 
 </dialog>
 
 <script>
     const modal = document.getElementById("modal") 
-    const xmark = document.getElementById("xmark")
+    const xmark = document.querySelectorAll("#xmark")
+    const modalMain = document.getElementById("modal-main") 
+    
+    const btnVehiclesN = document.getElementById("btnVehiclesN") 
+    const modalVehicles = document.getElementById("modal-vehicles") 
 
-    xmark.addEventListener("click", ()=>{ 
-        modal.classList.add("close")
-        modal.addEventListener("animationend", ()=>{
-            modal.classList.remove("close")
-            modal.classList.remove("open")
+    const btnEnergyN = document.getElementById("btnEnergyN")
+    const modalEnergy = document.getElementById("modal-energy") 
 
-        }, {once: true})
-            
+    const btnChargingN = document.getElementById("btnChargingN")
+    const modalCharging = document.getElementById("modal-charging") 
+
+    const btnReverse = document.querySelectorAll("#btnReverse")
+
+
+    console.log(xmark)
+    xmark.forEach((element)=>{
+        element.addEventListener("click", ()=>{
+            modal.classList.add("close")
+            modalVehicles.classList.add("hidden")
+            modalEnergy.classList.add("hidden")
+            modalCharging.classList.add("hidden")
+
+            modal.addEventListener("animationend", ()=>{
+                modal.classList.remove("close")
+                modal.classList.remove("open")
+                modalMain.style.removeProperty("display")
+            }, {once: true})
+        })
     })
+
+    const btnOpen = (btn, modal)=>{
+        btn.addEventListener("click", ()=>{
+            modalMain.style.display="none"
+            modal.classList.remove("hidden")
+        })
+    }
+    btnOpen(btnVehiclesN, modalVehicles)
+    btnOpen(btnEnergyN, modalEnergy)
+    btnOpen(btnChargingN, modalCharging)
+
+    const btnRewind = (modal)=>{
+        btnReverse.forEach((element)=>{
+            element.addEventListener("click", ()=>{
+                modal.classList.add("hidden")
+                modalMain.style.removeProperty("display")
+            })
+        })
+        
+    }
+    btnRewind(modalVehicles)
+    btnRewind(modalEnergy)
+    btnRewind(modalCharging)
+    
+
 </script>
 
 
@@ -101,6 +497,34 @@
     position: absolute;
     max-width: 100%;
     max-height: 100%;
+}
+@media (max-width: 950px) {
+    #grid-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+@media (max-width: 600px) {
+    #grid-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 450px) {
+    #grid-container {
+        display: flex;
+        flex-direction: column;
+    }
+    #button-container {
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+    }
+    #button-container img{
+        width: 10rem;
+    }
+    #button-items {
+        margin-top: 20px;
+        margin-left: 10px; 
+    }
 }
 
 .open {

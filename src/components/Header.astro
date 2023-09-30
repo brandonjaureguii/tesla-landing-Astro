@@ -5,35 +5,47 @@ import Navbar from './Navbar.astro'
 
 <header 
 id="landing-header"
-class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white ">
+class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white">
 
-
-    <div class="flex flex-grow basis-0 mt-1">
-        <Logo/>
+    <div id="nav-container" class="w-full flex justify-between">
+    <div id="img-logo" class="flex flex-grow basis-0 mt-1">
+        <div class="li-link">
+            <Logo/>
+        </div>
+        
     </div>
 
+    
 
-    <nav id="nav-bar">
+    <nav id="nav-bar" class="z-50">
         <ul class="flex [&>li>a]:inline-block [&>li>a]:transition-colors [&>li>a]:duration-300 [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a]:text-current">
-            <li><a href="#">Vehicles</a></li>
-            <li><a href="#">Energy</a></li>
-            <li><a href="#">Charging</a></li>
-            <li><a href="#">Discover</a></li>
+            <li id="btn-vehicles" class="li-link"><a href="#">Vehicles</a></li>
+            <li id="btn-energy" class="li-link"><a href="#">Energy</a></li>
+            <li id="btn-charging" class="li-link"><a href="#">Charging</a></li>
+            <li id="btn-discover" class="li-link"><a href="#">Discover</a></li>
+            <li id="btn-shop" class="li-link"><a href="#">Shop</a></li>
         </ul>
 
     </nav>
+
     <nav class="flex flex-grow basis-0 justify-end"
     id="nav-bar">
-        <ul class="flex [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a]:text-current [&>li>a]:transition-colors [&>li>a]:duration-300">
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Account</a></li>
-            <li><a href="#">Menu</a></li>
+        <ul class="flex [&>li>a]:inline-block [&>li>a]:px-2 [&>li>a]:py-1 [&>li>a]:text-current [&>li>a]:transition-colors [&>li>a]:duration-300">
+            <li class="li-link"><a href="#"><svg class="w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"></path>
+            </svg></a></li>
+            <li class="li-link"><a href="#"><svg class="w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"></path>
+            </svg></a></li>
+            <li class="li-link"><a href="#"><svg class="w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg></a></li>
         </ul>
     </nav>  
+    </div>
+    <div id="modal-backdrop" class="close"></div>
     
-    
-    <div 
-    id="menu-backdrop"
+    <div id="menu-backdrop"
     class="absolute bg-black/5 backdrop-blur-lg rounded 
     translate-x-[var(--left)] translate-y-[var(--top)] 
     left-0 top-0 w-[var(--width)] h-[var(--height)] 
@@ -41,11 +53,264 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
     opacity-0 -z-10"
     ></div>
 
+    <dialog id="dialog-dropdown" class="-z-20 absolute bg-white w-full left-0 top-0 m-0 p-0">
+            <div id="shop-content" class="mt-28 mb-16">
+                <div  class="flex justify-center text-center flex-row [&>a]:mx-12 [&>a>h2]:mt-3 [&>a>h2]:text-lg">
+                    <a href="">
+                        <img src="../../public/charging-item.avif" class="w-52" alt="">
+                        <h2>Charging</h2>
+                    </a>
+                    <a href="">
+                        <img src="../../public/wheel-item.avif" class="w-52" alt="">
+                        <h2>Vehicles Accessories</h2>
+                    </a> 
+                    <a href="">
+                        <img src="../../public/cap-item.avif" class="w-52" alt="">
+                        <h2>Apparel</h2>
+                    </a>
+                    <a href="" class="">
+                        <img src="../../public/backpack-item.avif" class="w-52" alt="">
+                        <h2>Lifestyle</h2>
+                    </a>    
+                </div>
+            </div>
+    
+            <div id="discover-content" class="mt-32 mb-20">
+    
+                <div class="flex justify-center m-20 [&>div]:px-20 [&>div>ul>li]:py-1">
+                        <div>
+                            <h3 class="text-slate-500 mb-5 font-thin">Resources</h3>
+    
+                            <ul>
+                                <li><a href="">Demo Drive</a></li>
+                                <li><a href="">Insurance</a></li>
+                                <li><a href="">Video Guides</a></li>
+                                <li><a href="">Customer Stories</a></li>
+                                <li><a href="">Events</a></li>
+                            </ul>
+                        </div>
+                            
+    
+                        <div>
+                            <h3 class="text-slate-500 mb-5 font-thin">Location Services</h3>
+    
+                            <ul>
+                                <li><a href="">Find Us</a></li>
+                                <li><a href="">Trip Planner</a></li>
+                                <li><a href="">Find a Collision Center</a></li>
+                                <li><a href="">Find a Certified Installer</a></li>
+                            </ul>
+                        </div>
+                            
+    
+                        <div>
+                            <h3 class="text-slate-500 mb-5 font-thin">Company</h3>
+    
+                            <ul>
+                                <li><a href="">About</a></li>
+                                <li><a href="">Careers</a></li>
+                                <li><a href="">Investor Relations</a></li>
+                            </ul>
+                        </div>
+                    
+                </div>
+            </div>
+    
+            <div id="charging-content" class="mt-28 mb-20">
+                <div class="flex justify-center text-center [&>div>a>h2]:mt-3 [&>a>h2]:text-lg align-center">
+                    <div class="justify-column text-center mx-4">
+                        <a href="" class="">
+                            <img src="../../public/charging2-item.avif" class="w-52" alt="">
+                            <h2>Charging</h2><br>
+                            <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                <a href="#">Learn</a>
+                            </div>
+                        </a>
+                    </div>
+    
+                    <div class="justify-column text-center mx-4">
+                        <a href="" class="">
+                            <img src="../../public/charging-item.avif" class="w-52" alt="">
+                            <h2>Home Charging</h2><br>
+                            <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                <a href="#">Learn</a>
+                                <a href="#">Shop</a>
+                            </div>
+                        </a>
+                    </div>
+    
+                    <div class="justify-column text-center mx-4">
+                        <a href="" class="">
+                            <img src="../../public/supercharging-item.avif" class="w-52" alt="">
+                            <h2>Supercharging</h2><br>
+                            <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                <a href="#">Learn</a>
+                                <a href="#">Find</a>
+                            </div>
+                        </a>
+                    </div>
+    
+                    <div class="w-px bg-slate-500 opacity-50 ml-10"></div>
+    
+                    <div class="justify-column ml-20">
+                        <ul class="text-left [&>li>a]:text-sm [&>li]:mt-2 text-slate-700 ">
+                            <li><a href="#">Charging Calculator</a></li>
+                            <li><a href="#">Trip Planner</a></li>
+                            <li><a href="#">Supercharger Voting</a></li>
+                            <li><a href="#">Host a Supercharger</a></li>
+                            <li><a href="#">Commercial Charging</a></li>
+                            <li><a href="#">Host Wall Connectors</a></li>
+                
+                        </ul>
+                    </div>
+                    
+                </div>
+    
+                
+            </div>
+    
+            <div id="energy-content" class="mt-28 mb-20">
+                <div class="flex justify-center text-center [&>div>a>h2]:mt-3 [&>a>h2]:text-lg align-center">
+                    <div class="justify-column text-center mx-4">
+                        <a href="" class="">
+                            <img src="../../public/solar-panels-item.avif" class="w-52" alt="">
+                            <h2>Solar Panels</h2><br>
+                            <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                <a href="#">Learn</a>
+                                <a href="#">Order</a>
+                            </div>
+                        </a>
+                    </div>
+    
+                    <div class="justify-column text-center mx-4">
+                        <a href="" class="">
+                            <img src="../../public/solar-roof-item.avif" class="w-52" alt="">
+                            <h2>Solar Roof</h2><br>
+                            <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                <a href="#">Learn</a>
+                                <a href="#">Order</a>
+                            </div>
+                        </a>
+                    </div>
+    
+                    <div class="justify-column text-center mx-4">
+                        <a href="" class="">
+                            <img src="../../public/powerwall-item.avif" class="w-52" alt="">
+                            <h2>Powerwall</h2><br>
+                            <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                <a href="#">Learn</a>
+                                <a href="#">Order</a>
+                            </div>
+                        </a>
+                    </div>
+    
+                    <div class="justify-column text-center mx-4">
+                        <a href="" class="">
+                            <img src="../../public/megapack-item.avif" class="w-52" alt="">
+                            <h2>Megapack</h2><br>
+                            <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                <a href="#">Learn</a>
+                                <a href="#">Order</a>
+                            </div>
+                        </a>
+                    </div>
+    
+                    <div class="w-px bg-slate-500 opacity-50 ml-10"></div>
+    
+                    <div class="justify-column ml-20">
+                        <ul class="text-left [&>li>a]:text-sm [&>li]:mt-2 text-slate-700 ">
+                            <li><a href="#">Schedule a Consultation</a></li>
+                            <li><a href="#">Incentives</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Partner with Tesla</a></li>
+                            <li><a href="#">Commercial</a></li>
+                            <li><a href="#">Utilities</a></li>
+                
+                        </ul>
+                    </div>
+                    
+                </div>
+    
+                
+            </div>
+    
+            <div id="vehicles-content" class="mt-28 mb-20">
+                <div class="flex justify-center text-center [&>div>a>h2]:mt-3 [&>a>h2]:text-lg align-center [&>div]:flex-wrap">
+                    <div class="justify-column text-center mx-4 ">
+                        <a href="" class="">
+                            <img src="../../public/model-3-item.avif" class="w-52" alt="">
+                            <h2>Model 3</h2><br>
+                            <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                <a href="#">Learn</a>
+                                <a href="#">Order</a>
+                            </div>
+                        </a>
+                    </div>
+    
+                    <div class="justify-column text-center mx-4">
+                        <a href="" class="">
+                            <img src="../../public/model-s-item.avif" class="w-52" alt="">
+                            <h2>Model S</h2><br>
+                            <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                <a href="#">Learn</a>
+                                <a href="#">Order</a>
+                            </div>
+                        </a>
+                    </div>
+    
+                    <div class="justify-column text-center mx-4">
+                        <a href="" class="">
+                            <img src="../../public/model-x-item.avif" class="w-52" alt="">
+                            <h2>Model X</h2><br>
+                            <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                <a href="#">Learn</a>
+                                <a href="#">Order</a>
+                            </div>
+                        </a>
+                    </div>
+    
+                    <div class="justify-column text-center mx-4">
+                        <a href="" class="">
+                            <img src="../../public/model-y-item.avif" class="w-52" alt="">
+                            <h2>Model Y</h2><br>
+                            <div class="-mt-4 text-xs [&>a]:underline [&>a]:text-slate-500 [&>a]:mx-1">
+                                <a href="#">Learn</a>
+                                <a href="#">Order</a>
+                            </div>
+                        </a>
+                    </div>
+    
+                    <div class="w-px bg-slate-500 opacity-50 ml-10"></div>
+    
+                    <div class="justify-column ml-20">
+                        <ul class="text-left [&>li>a]:text-sm [&>li]:mt-2 text-slate-700 ">
+                            <li><a href="#">Inventory</a></li>
+                            <li><a href="#">Used Cars</a></li>
+                            <li><a href="#">Demo Drive</a></li>
+                            <li><a href="#">Trade-in</a></li>
+                            <li><a href="#">Help Me Choose</a></li>
+                            <li><a href="#">Compare</a></li>
+                            <li><a href="#">Fleet</a></li>
+                            <li><a href="#">Cybertruck</a></li>
+                            <li><a href="#">Semi</a></li>
+                            <li><a href="#">Roadster</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+    
+                
+            </div>          
+    </dialog>
 
     <div class="backdrop-blur-xl p-1 px-3 bg-black/5 cursor-pointer -mr-4 hidden"
     id="btn-menu">
         Menu
     </div>
+
+
+
+    
 
 </header>
 
@@ -53,7 +318,7 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
 
 <script>
 
-    const ListItem = document.querySelectorAll("#landing-header li")
+    const ListItem = document.querySelectorAll("#landing-header .li-link")
     const MenuBackdrop = document.querySelector("#menu-backdrop") as HTMLElement
 
     ListItem.forEach((item) => {
@@ -97,20 +362,176 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
     $sections.forEach(section => observer.observe(section))
 
 
-
-
-    // btn open modal
     const btnMenu = document.getElementById("btn-menu")
     const modal = document.getElementById("modal") 
     btnMenu.addEventListener("click", ()=>{
         modal.classList.add("open")
     })
+
+
+
+
+    const navLinks = document.querySelectorAll(".li-link")
+    const dialog = document.getElementById("dialog-dropdown") as HTMLElement
+
+    const btnVehicles = document.getElementById("btn-vehicles")
+    const vehiclesContent = document.getElementById("vehicles-content")
+
+    const btnEnergy = document.getElementById("btn-energy")
+    const energyContent = document.getElementById("energy-content")
+
+    const btnCharging = document.getElementById("btn-charging")
+    const ChargingContent = document.getElementById("charging-content")
     
+    const btnDiscover = document.getElementById("btn-discover")
+    const discoverContent = document.getElementById("discover-content")
+
+
+    const btnShop = document.getElementById("btn-shop")
+    const shopContent = document.getElementById("shop-content")
+    
+    const navContent = document.getElementById("nav-container")
+    const navBar = document.querySelectorAll("#nav-bar")
+    const logo = document.getElementById("img-logo")
+    const divBlur = document.getElementById("modal-backdrop")
+
+    navLinks.forEach((element)=>{
+
+        element.addEventListener("mouseenter", ()=>{
+            dialog.addEventListener("animationend", ()=>{
+                dialog.style.height=`${dialog.clientHeight}px`
+            })
+            dialog.classList.add("open")
+            dialog.classList.remove("close")
+            divBlur.classList.add("open")
+            divBlur.classList.remove("close")
+        
+            if ($header.style.getPropertyValue("color") == "white") {
+                    navContent.style.color="black"
+            } 
+
+            navLinks.forEach(element => {
+            element.classList.remove("active")
+            });
+            element.classList.add("active")
+
+            document.addEventListener("mousemove", function(event) {
+            let positionY = event.clientY;
+
+            if(positionY > dialog.clientHeight) {
+                dialog.classList.add("close")
+                dialog.classList.remove("open")
+                navContent.style.removeProperty("color")
+                divBlur.classList.add("close")
+                divBlur.classList.remove("open")
+
+            }
+            
+        });  
+        })
+    })
+    
+
+    function checkClass1() {
+  
+        if (btnShop.classList.contains('active')) {
+            shopContent.classList.remove("close")
+            shopContent.classList.add("open") 
+            dialog.style.height="360px"
+        } else {
+            shopContent.classList.remove("open")
+            shopContent.classList.add("close")
+        }
+    }
+
+    function checkClass2() {
+  
+    if (btnDiscover.classList.contains('active')) {
+        discoverContent.classList.remove("close")
+        discoverContent.classList.add("open")
+        dialog.style.height="440px"
+        
+    } else {
+        discoverContent.classList.remove("open")
+        discoverContent.classList.add("close")
+    }
+    }
+
+    function checkClass3() {
+  
+    if (btnCharging.classList.contains('active')) {
+      ChargingContent.classList.remove("close")
+      ChargingContent.classList.add("open") 
+      dialog.style.height="380px"
+    } else {
+      ChargingContent.classList.remove("open")
+      ChargingContent.classList.add("close")
+    }
+    }
+
+    function checkClass4() {
+  
+    if (btnEnergy.classList.contains('active')) {
+        energyContent.classList.remove("close")
+        energyContent.classList.add("open")
+        dialog.style.height="380px"
+    } else {
+        energyContent.classList.remove("open")
+        energyContent.classList.add("close")
+    }
+    }
+
+    function checkClass5() {
+  
+    if (btnVehicles.classList.contains('active')) {
+        vehiclesContent.classList.remove("close")
+        vehiclesContent.classList.add("open")
+        dialog.style.height="520px"
+    } else {
+        vehiclesContent.classList.remove("open")
+        vehiclesContent.classList.add("close")
+    }
+    }
+
+
+    
+    function observeChanges(mutationsList) {
+        for (const mutation of mutationsList) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+            checkClass1()
+            checkClass2() 
+            checkClass3() 
+            checkClass4()   
+            checkClass5()   }
+        }
+    }
+
+    const observerClass = new MutationObserver(observeChanges);
+
+    observerClass.observe(btnShop, { attributes: true });
+    observerClass.observe(btnDiscover, { attributes: true });
+    checkClass1()
+    checkClass2()
+    checkClass3()
+    checkClass4()
+    checkClass5()
+
+
+    
+
+
+
+
+
+  
+
+   
 
 </script>
 
 
 <style>
+
 @media (max-width: 1260px) {
 	#nav-bar {
 		display: none;
@@ -118,6 +539,13 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
     #btn-menu {
        display: inline;
     }
+    #dialog-dropdown {
+        display: none;
+    }
+    #modal-backdrop {
+        display: none;
+    }
+
 }
 @media (max-width: 620px) {
 	#landing-header {
@@ -126,4 +554,44 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
     }
 }
 
+
+
+.open {
+    display: block;
+    opacity: 1;
+}
+.close {
+    opacity: 0;
+    display: none;  
+}
+.active {
+    display: block;
+}
+
+
+
+
+#dialog-dropdown{
+    transition: height 400ms;
+    animation: fade-in 500ms forwards;
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#modal-backdrop {
+    backdrop-filter: blur(5px);
+    position: fixed;
+    block-size: 120vh;
+    inline-size: 120vw;
+    left: -20%;
+    top: 0%;
+    background-color: rgb(0, 0, 0, 0.2);
+    z-index: -30; 
+}   
 </style>

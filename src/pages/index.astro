@@ -7,7 +7,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Header/>
 
-<main class="snap-y snap-mandatory relative w-screen h-screen overflow-auto scroll overflow-x-hidden">	
+<main id="main-container" class="snap-y snap-mandatory relative w-screen h-screen overflow-auto scroll overflow-x-hidden">	
 		<div class="snap-center">
 			<Section title="Experience Tesla" color="white">
 
@@ -166,14 +166,15 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 
 				<div slot="footer-end" id="footer-container">
-					<ul class="text-slate-300 text-xs flex justify-center flex-wrap">
-						<li class="p-3 py-7"><a href="#">Tesla © 2023</a></li>
-						<li class="p-3 py-7"><a href="#">Privacy & Legal</a></li>
-						<li class="p-3 py-7"><a href="#">Vehicle Recalls</a></li>
-						<li class="p-3 py-7"><a href="#">Contact</a></li>
-						<li class="p-3 py-7"><a href="#">News</a></li>
-						<li class="p-3 py-7"><a href="#">Get Updates</a></li>
-						<li class="p-3 py-7"><a href="#">Locations</a></li>
+					<ul class="text-slate-200 text-sm flex justify-center flex-wrap [&>li]:p-4 [&>li]:pb-6">
+						<li><a href="#">Tesla © 2023</a></li>
+						<li><a href="#">Privacy & Legal</a></li>
+						<li><a href="#">Vehicle Recalls</a></li>
+						<li id="delete"><a href="#">Contact</a></li>
+						<li><a href="#">News</a></li>
+						<li id="delete"><a href="#">Get Updates</a></li>
+						<li id="delete"><a href="#">Locations</a></li>
+
 					</ul>
 				</div>
 			
@@ -186,6 +187,8 @@ import Layout from '../layouts/Layout.astro';
 			</Section>
 			
 		</div>
+
+		
 		
 </main>
 
@@ -243,7 +246,16 @@ changeSize(mediaQr)
 			background-color: black;
 		}
 	}
-	@media (max-width: 620px) {
+	
+	@media (max-width: 720px) {
+		#footer-container ul {
+			font-size: 13px;
+		}
+		#footer-container ul li {
+			padding: 15px;
+		}
+	}
+	@media (max-width: 600px) {
 		
 		p {
 			font-size: 10px;
@@ -257,15 +269,17 @@ changeSize(mediaQr)
 			margin-bottom: 15px;
 			
 		}
-		
-	}
-	@media (max-width: 680px) {
-		#footer-container ul {
-			font-size: 10px;
+		#footer-container {
+			padding: 15px;
+		}
+		#footer-container ul{
+			flex-direction: column;
 		}
 		#footer-container ul li {
-			padding-top: 13px;
-			padding-bottom: 13px;
+			padding: 5px;
+		}
+		#delete {
+			display: none;
 		}
 	}
 </style>
