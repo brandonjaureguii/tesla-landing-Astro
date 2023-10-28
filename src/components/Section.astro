@@ -9,11 +9,14 @@ const textColor = `text-${color}`
 
     <div class="z-30 relative h-full flex flex-col">
         <header id="div-title">
-            <h2 id="title"class={`${textColor} pt-40  text-[40px] font-medium`}>{title}</h2>
-            <slot id="subtitle" name="subtitle">
+            <h2 id="title" class={`${textColor} pt-40  text-[40px] font-medium`}>{title}</h2>
+            <div id="subtitle-container">
+                <slot id="subtitle" name="subtitle"></slot>
+            </div>
+            
         </header>
 
-        <footer class="flex flex-col flex-grow justify-end pb-24">
+        <footer id="btn-footer" class="flex flex-col flex-grow justify-end pb-24">
                 <slot name="footer">     
         </footer>
 
@@ -38,4 +41,32 @@ const textColor = `text-${color}`
 			font-size: 30px;
 		}
 	}
+
+
+    .slideup-animation {
+        animation: slideup 0.8s ease;
+    }
+    .slidedown-animation {
+        animation: slidedown 0.8s ease;
+    }
+    @keyframes slideup {
+    0% {
+        transform: translateY(30%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    }
+    @keyframes slidedown {
+    0% {
+        transform: translateY(-5%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    }
 </style>

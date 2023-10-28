@@ -38,3 +38,27 @@ const observer = new IntersectionObserver(entries => {
 }, observerOptions)
 const $sections = document.querySelectorAll('.landing-section')
 $sections.forEach(section => observer.observe(section))
+
+
+
+const $title = document.getElementById("title")
+const $subtitle = document.getElementById("subtitle-container")
+const $btnFooter = document.getElementById("btn-footer")
+
+$title.style.opacity = "0"
+$subtitle.style.opacity = "0"
+$btnFooter.style.opacity = "0"
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(() => {
+        $title.classList.add("slideup-animation")
+        $title.style.opacity = "1"
+    }, 500);
+    setTimeout(() => {
+        $subtitle.classList.add("slideup-animation")
+        $subtitle.style.opacity = "1"
+        $btnFooter.classList.add("slidedown-animation")
+        $btnFooter.style.opacity = "1"
+    }, 1150);
+});
