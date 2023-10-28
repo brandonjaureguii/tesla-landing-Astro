@@ -81,7 +81,7 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
                         <div>
                             <h3 class="text-slate-500 mb-5 font-thin">Resources</h3>
     
-                            <ul>
+                            <ul class="text-slate-900 hover:[&>li>a]:underline underline-offset-4">
                                 <li><a href="">Demo Drive</a></li>
                                 <li><a href="">Insurance</a></li>
                                 <li><a href="">Video Guides</a></li>
@@ -94,7 +94,7 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
                         <div>
                             <h3 class="text-slate-500 mb-5 font-thin">Location Services</h3>
     
-                            <ul>
+                            <ul class="text-slate-900 hover:[&>li>a]:underline underline-offset-4">
                                 <li><a href="">Find Us</a></li>
                                 <li><a href="">Trip Planner</a></li>
                                 <li><a href="">Find a Collision Center</a></li>
@@ -106,7 +106,7 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
                         <div>
                             <h3 class="text-slate-500 mb-5 font-thin">Company</h3>
     
-                            <ul>
+                            <ul class="text-slate-900 hover:[&>li>a]:underline underline-offset-4">
                                 <li><a href="">About</a></li>
                                 <li><a href="">Careers</a></li>
                                 <li><a href="">Investor Relations</a></li>
@@ -153,7 +153,7 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
                     <div class="w-px bg-slate-500 opacity-50 ml-10"></div>
     
                     <div class="justify-column ml-20">
-                        <ul class="text-left [&>li>a]:text-sm [&>li]:mt-2 text-slate-700 ">
+                        <ul class="text-left [&>li>a]:text-sm [&>li]:mt-2 text-slate-900 hover:[&>li>a]:underline underline-offset-4">
                             <li><a href="#">Charging Calculator</a></li>
                             <li><a href="#">Trip Planner</a></li>
                             <li><a href="#">Supercharger Voting</a></li>
@@ -218,7 +218,7 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
                     <div class="w-px bg-slate-500 opacity-50 ml-10"></div>
     
                     <div class="justify-column ml-20">
-                        <ul class="text-left [&>li>a]:text-sm [&>li]:mt-2 text-slate-700 ">
+                        <ul class="text-left [&>li>a]:text-sm [&>li]:mt-2 text-slate-900 hover:[&>li>a]:underline underline-offset-4 ">
                             <li><a href="#">Schedule a Consultation</a></li>
                             <li><a href="#">Incentives</a></li>
                             <li><a href="#">Support</a></li>
@@ -283,7 +283,7 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
                     <div class="w-px bg-slate-500 opacity-50 ml-10"></div>
     
                     <div class="justify-column ml-20">
-                        <ul class="text-left [&>li>a]:text-sm [&>li]:mt-2 text-slate-700 ">
+                        <ul class="text-left [&>li>a]:text-sm [&>li]:mt-2 text-slate-900 hover:[&>li>a]:underline underline-offset-4">
                             <li><a href="#">Inventory</a></li>
                             <li><a href="#">Used Cars</a></li>
                             <li><a href="#">Demo Drive</a></li>
@@ -315,220 +315,6 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
 </header>
 
 <Navbar></Navbar>
-
-<script>
-
-    const ListItem = document.querySelectorAll("#landing-header .li-link")
-    const MenuBackdrop = document.querySelector("#menu-backdrop") as HTMLElement
-
-    ListItem.forEach((item) => {
-        item.addEventListener("mouseenter", () => {
-            const { left, top, width, height } = item.getBoundingClientRect()
-            const { clientHeight, clientWidth } = item 
-            MenuBackdrop.style.setProperty("--left", `${left}px`)
-            MenuBackdrop.style.setProperty("--top", `${top}px`)
-            MenuBackdrop.style.setProperty("--width", `${width}px`)
-            MenuBackdrop.style.setProperty("--height", `${height}px`)
-            MenuBackdrop.style.opacity = "1"
-            MenuBackdrop.style.visibility = "visible"
-
-            item.addEventListener("mouseleave", ()=> {
-            MenuBackdrop.style.opacity = "0"
-            MenuBackdrop.style.visibility = "hidden"
-            })
-        })
-    })
-
-
-
-    const $header = document.getElementById('landing-header')
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px', 
-        threshold: 0.99 
-    }
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            const { isIntersecting } = entry
-            if (isIntersecting) {
-                const color = entry.target.getAttribute('data-header-color')
-                $header.style.color = color
-            }
-        })
-    }, observerOptions)
-
-    const $sections = document.querySelectorAll('.landing-section')
-    $sections.forEach(section => observer.observe(section))
-
-
-    const btnMenu = document.getElementById("btn-menu")
-    const modal = document.getElementById("modal") 
-    btnMenu.addEventListener("click", ()=>{
-        modal.classList.add("open")
-    })
-
-
-
-
-    const navLinks = document.querySelectorAll(".li-link")
-    const dialog = document.getElementById("dialog-dropdown") as HTMLElement
-
-    const btnVehicles = document.getElementById("btn-vehicles")
-    const vehiclesContent = document.getElementById("vehicles-content")
-
-    const btnEnergy = document.getElementById("btn-energy")
-    const energyContent = document.getElementById("energy-content")
-
-    const btnCharging = document.getElementById("btn-charging")
-    const ChargingContent = document.getElementById("charging-content")
-    
-    const btnDiscover = document.getElementById("btn-discover")
-    const discoverContent = document.getElementById("discover-content")
-
-
-    const btnShop = document.getElementById("btn-shop")
-    const shopContent = document.getElementById("shop-content")
-    
-    const navContent = document.getElementById("nav-container")
-    const navBar = document.querySelectorAll("#nav-bar")
-    const logo = document.getElementById("img-logo")
-    const divBlur = document.getElementById("modal-backdrop")
-
-    navLinks.forEach((element)=>{
-
-        element.addEventListener("mouseenter", ()=>{
-            dialog.addEventListener("animationend", ()=>{
-                dialog.style.height=`${dialog.clientHeight}px`
-            })
-            dialog.classList.add("open")
-            dialog.classList.remove("close")
-            divBlur.classList.add("open")
-            divBlur.classList.remove("close")
-        
-            if ($header.style.getPropertyValue("color") == "white") {
-                    navContent.style.color="black"
-            } 
-
-            navLinks.forEach(element => {
-            element.classList.remove("active")
-            });
-            element.classList.add("active")
-
-            document.addEventListener("mousemove", function(event) {
-            let positionY = event.clientY;
-
-            if(positionY > dialog.clientHeight) {
-                dialog.classList.add("close")
-                dialog.classList.remove("open")
-                navContent.style.removeProperty("color")
-                divBlur.classList.add("close")
-                divBlur.classList.remove("open")
-
-            }
-            
-        });  
-        })
-    })
-    
-
-    function checkClass1() {
-  
-        if (btnShop.classList.contains('active')) {
-            shopContent.classList.remove("close")
-            shopContent.classList.add("open") 
-            dialog.style.height="360px"
-        } else {
-            shopContent.classList.remove("open")
-            shopContent.classList.add("close")
-        }
-    }
-
-    function checkClass2() {
-  
-    if (btnDiscover.classList.contains('active')) {
-        discoverContent.classList.remove("close")
-        discoverContent.classList.add("open")
-        dialog.style.height="440px"
-        
-    } else {
-        discoverContent.classList.remove("open")
-        discoverContent.classList.add("close")
-    }
-    }
-
-    function checkClass3() {
-  
-    if (btnCharging.classList.contains('active')) {
-      ChargingContent.classList.remove("close")
-      ChargingContent.classList.add("open") 
-      dialog.style.height="380px"
-    } else {
-      ChargingContent.classList.remove("open")
-      ChargingContent.classList.add("close")
-    }
-    }
-
-    function checkClass4() {
-  
-    if (btnEnergy.classList.contains('active')) {
-        energyContent.classList.remove("close")
-        energyContent.classList.add("open")
-        dialog.style.height="380px"
-    } else {
-        energyContent.classList.remove("open")
-        energyContent.classList.add("close")
-    }
-    }
-
-    function checkClass5() {
-  
-    if (btnVehicles.classList.contains('active')) {
-        vehiclesContent.classList.remove("close")
-        vehiclesContent.classList.add("open")
-        dialog.style.height="520px"
-    } else {
-        vehiclesContent.classList.remove("open")
-        vehiclesContent.classList.add("close")
-    }
-    }
-
-
-    
-    function observeChanges(mutationsList) {
-        for (const mutation of mutationsList) {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-            checkClass1()
-            checkClass2() 
-            checkClass3() 
-            checkClass4()   
-            checkClass5()   }
-        }
-    }
-
-    const observerClass = new MutationObserver(observeChanges);
-
-    observerClass.observe(btnShop, { attributes: true });
-    observerClass.observe(btnDiscover, { attributes: true });
-    checkClass1()
-    checkClass2()
-    checkClass3()
-    checkClass4()
-    checkClass5()
-
-
-    
-
-
-
-
-
-  
-
-   
-
-</script>
-
 
 <style>
 
