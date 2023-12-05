@@ -344,10 +344,8 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
 
 .open {
     display: block;
-    opacity: 1;
 }
 .close {
-    opacity: 0;
     display: none;  
 }
 .active {
@@ -358,8 +356,8 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
 
 
 #dialog-dropdown{
-    transition: height 400ms;
-    animation: fade-in 500ms forwards;
+    transition: height 500ms;
+ /* animation: fade-in 500ms forwards; */
 }
 @keyframes fade-in {
     0% {
@@ -368,6 +366,18 @@ class="landing-section py-3 px-10 flex items-center fixed top-0 w-full justify-b
     100% {
         opacity: 1;
     }
+}
+
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        height: 250px;
+    }
+
 }
 
 #modal-backdrop {

@@ -34,8 +34,9 @@ const btnMenu = document.getElementById("btn-menu")
             dialog.addEventListener("animationend", ()=>{
                 dialog.style.height=`${dialog.clientHeight}px`
             })
-            dialog.classList.add("open")
             dialog.classList.remove("close")
+            dialog.classList.add("open")
+            dialog.style.animation = "fade-in 500ms forwards"
             divBlur.classList.add("open")
             divBlur.classList.remove("close")
 
@@ -43,6 +44,8 @@ const btnMenu = document.getElementById("btn-menu")
             if ($header.style.getPropertyValue("color") == "white") {
                     navContent.style.color="black"
             } 
+            
+            
 
             navLinks.forEach(element => {
             element.classList.remove("active")
@@ -51,16 +54,19 @@ const btnMenu = document.getElementById("btn-menu")
 
             document.addEventListener("mousemove", function(event) {
             let positionY = event.clientY;
-
-            if(positionY > dialog.clientHeight) {
-                dialog.classList.add("close")
-                dialog.classList.remove("open")
-                navContent.style.removeProperty("color")
-                divBlur.classList.add("close")
-                divBlur.classList.remove("open")
-
+            if(dialog.clientHeight > 350) {
+                if(positionY > dialog.clientHeight) {
+                    dialog.style.animation = "fade-out 300ms forwards"
+                    setTimeout(()=>{
+                        dialog.classList.add("close")
+                        dialog.classList.remove("open") 
+                    }, 200)  
+                    navContent.style.removeProperty("color")    
+                    divBlur.classList.add("close")
+                    divBlur.classList.remove("open")
+                } 
             }
-            
+                
         });  
         })
     })
